@@ -1,0 +1,17 @@
+{
+  "PredictionMarket": {
+    "address": "0x27c8EAfB0aBADAc25ac194Ca8Fe1208D5E0D9bbd",
+    "network": "baseSepolia",
+    "deployer": "0x8108ac6F8eb2945E11938176b7c3EdfC17fF478c"
+  },
+  "SwarmFunctions": {
+    "address": "0x9100AF642f6Fa6FbBbE5248f75f08DFE8d42E23f",
+    "network": "baseSepolia",
+    "deployer": "0x8108ac6F8eb2945E11938176b7c3EdfC17fF478c"
+  },
+  "SwarmCCIP": {
+    "address": "0x4168cC0010de28F5b4C50C315eD64c385Dca46e0",
+    "network": "baseSepolia",
+    "deployer": "0x8108ac6F8eb2945E11938176b7c3EdfC17fF478c"
+  }
+}

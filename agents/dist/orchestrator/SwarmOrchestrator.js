@@ -1,0 +1,263 @@
+import { logger } from '../utils/logger.js';
+export class SwarmOrchestrator {
+    coordinator;
+    agents;
+    isRunning = false;
+    taskQueue = [];
+    processInterval = null;
+    constructor(coordinator, agents) {
+        this.coordinator = coordinator;
+        this.agents = agents;
+    }
+    async start() {
+        logger.info('🚀 Starting Swarm Oracle orchestrator');
+        this.isRunning = true;
+        // Start all agents
+        await this.startAllAgents();
+        // Start task processing
+        this.startTaskProcessing();
+        // Start health monitoring
+        this.startHealthMonitoring();
+        // Start demo prediction cycle
+        this.startDemoPredictionCycle();
+        logger.info('✅ Swarm Oracle orchestrator started successfully');
+    }
+    async stop() {
+        logger.info('🛑 Stopping Swarm Oracle orchestrator');
+        this.isRunning = false;
+        // Clear intervals
+        if (this.processInterval) {
+            clearInterval(this.processInterval);
+        }
+        // Stop all agents
+        await this.stopAllAgents();
+        // Shutdown coordinator
+        await this.coordinator.shutdown();
+        logger.info('✅ Swarm Oracle orchestrator stopped');
+    }
+    async startAllAgents() {
+        const allAgents = [
+            ...this.agents.dataCollectors,
+            ...this.agents.analysts,
+            ...this.agents.deliberation,
+            ...this.agents.execution
+        ];
+        for (const agent of allAgents) {
+            try {
+                await agent.start();
+                logger.info(`✅ Started agent: ${agent.getId()}`);
+            }
+            catch (error) {
+                logger.error(`❌ Failed to start agent ${agent.getId()}:`, error);
+            }
+        }
+    }
+    async stopAllAgents() {
+        const allAgents = [
+            ...this.agents.dataCollectors,
+            ...this.agents.analysts,
+            ...this.agents.deliberation,
+            ...this.agents.execution
+        ];
+        for (const agent of allAgents) {
+            try {
+                await agent.stop();
+                logger.info(`✅ Stopped agent: ${agent.getId()}`);
+            }
+            catch (error) {
+                logger.error(`❌ Failed to stop agent ${agent.getId()}:`, error);
+            }
+        }
+    }
+    startTaskProcessing() {
+        this.processInterval = setInterval(async () => {
+            if (this.taskQueue.length > 0) {
+                const task = this.taskQueue.shift();
+                await this.processTask(task);
+            }
+        }, 5000); // Process tasks every 5 seconds
+    }
+    async processTask(task) {
+        logger.info(`📋 Processing task: ${task.type}`);
+        try {
+            switch (task.type) {
+                case 'market_prediction':
+                    await this.processMarketPredictionTask(task);
+                    break;
+                case 'data_collection':
+                    await this.processDataCollectionTask(task);
+                    break;
+                case 'analysis':
+                    await this.processAnalysisTask(task);
+                    break;
+                default:
+                    logger.warn(`Unknown task type: ${task.type}`);
+            }
+        }
+        catch (error) {
+            logger.error(`Failed to process task ${task.type}:`, error);
+        }
+    }
+    async processMarketPredictionTask(task) {
+        // 1. Collect data from all data collectors
+        const dataCollection = await this.collectMarketData(task.market);
+        // 2. Analyze data with analyst agents
+        const analysisResults = await this.analyzeMarketData(dataCollection);
+        // 3. Build consensus through deliberation
+        const consensus = await this.buildConsensus(analysisResults);
+        // 4. Execute if consensus reached
+        if (consensus.hasConsensus) {
+            await this.executeMarketDecision(consensus, task);
+        }
+        logger.info(`✅ Market prediction task completed for ${task.market}`);
+    }
+    async collectMarketData(market) {
+        const dataResults = await Promise.all(this.agents.dataCollectors.map(async (agent) => {
+            try {
+                return await agent.processTask({
+                    type: 'collect_data',
+                    data: { market, timestamp: Date.now() }
+                });
+            }
+            catch (error) {
+                logger.error(`Data collection failed for ${agent.getId()}:`, error);
+                return null;
+            }
+        }));
+        return dataResults.filter(result => result !== null);
+    }
+    async analyzeMarketData(dataCollection) {
+        const analysisResults = await Promise.all(this.agents.analysts.map(async (agent) => {
+            try {
+                return await agent.processTask({
+                    type: 'analyze_data',
+                    data: {
+                        dataCollection,
+                        marketData: this.aggregateMarketData(dataCollection),
+                        timestamp: Date.now()
+                    }
+                });
+            }
+            catch (error) {
+                logger.error(`Analysis failed for ${agent.getId()}:`, error);
+                return null;
+            }
+        }));
+        return analysisResults.filter(result => result !== null);
+    }
+    async buildConsensus(analysisResults) {
+        const facilitator = this.agents.deliberation.find(agent => agent.getType() === 'facilitator');
+        if (!facilitator) {
+            throw new Error('No consensus facilitator available');
+        }
+        return await facilitator.processTask({
+            type: 'build_consensus',
+            data: {
+                predictions: analysisResults,
+                threshold: 0.8,
+                timestamp: Date.now()
+            }
+        });
+    }
+    async executeMarketDecision(consensus, task) {
+        const riskManager = this.agents.execution.find(agent => agent.getType() === 'risk_manager');
+        if (!riskManager) {
+            logger.warn('No risk manager available for execution');
+            return;
+        }
+        const riskAssessment = await riskManager.processTask({
+            type: 'assess_risk',
+            data: {
+                prediction: consensus.consensus,
+                marketData: { market: task.market },
+                riskParameters: { positionSize: 0.1, portfolioSize: 1.0 }
+            }
+        });
+        logger.info(`🎯 Execution decision: ${riskAssessment.recommendation.action} for ${task.market}`);
+    }
+    aggregateMarketData(dataCollection) {
+        // Simple aggregation of market data
+        const aggregated = {
+            timestamp: Date.now(),
+            sources: dataCollection.length,
+            marketCap: 0,
+            volume24h: 0,
+            volatility: 0.2,
+            sentiment: 0.5
+        };
+        // Mock aggregation
+        for (const data of dataCollection) {
+            if (data.marketData) {
+                aggregated.marketCap += data.marketData.marketCap || 0;
+                aggregated.volume24h += data.marketData.volume24h || 0;
+            }
+        }
+        return aggregated;
+    }
+    async processDataCollectionTask(task) {
+        // Trigger data collection from all collectors
+        for (const collector of this.agents.dataCollectors) {
+            try {
+                await collector.processTask(task);
+            }
+            catch (error) {
+                logger.error(`Data collection failed for ${collector.getId()}:`, error);
+            }
+        }
+    }
+    async processAnalysisTask(task) {
+        // Trigger analysis from all analysts
+        for (const analyst of this.agents.analysts) {
+            try {
+                await analyst.processTask(task);
+            }
+            catch (error) {
+                logger.error(`Analysis failed for ${analyst.getId()}:`, error);
+            }
+        }
+    }
+    startHealthMonitoring() {
+        setInterval(async () => {
+            if (this.isRunning) {
+                const isHealthy = await this.coordinator.healthCheck();
+                if (!isHealthy) {
+                    logger.warn('⚠️ Swarm health check failed - some agents may be unhealthy');
+                }
+            }
+        }, 30000); // Check every 30 seconds
+    }
+    startDemoPredictionCycle() {
+        // Demo: Create prediction tasks for popular markets
+        const markets = ['BTC/USD', 'ETH/USD', 'SOL/USD'];
+        setInterval(() => {
+            if (this.isRunning) {
+                const randomMarket = markets[Math.floor(Math.random() * markets.length)];
+                this.addTask({
+                    id: `prediction_${Date.now()}`,
+                    type: 'market_prediction',
+                    market: randomMarket,
+                    timestamp: Date.now()
+                });
+                logger.info(`📊 Added prediction task for ${randomMarket}`);
+            }
+        }, 60000); // Every minute
+    }
+    addTask(task) {
+        this.taskQueue.push(task);
+        logger.info(`📝 Task added to queue: ${task.type}`);
+    }
+    getStatus() {
+        return {
+            isRunning: this.isRunning,
+            queueSize: this.taskQueue.length,
+            agentCounts: {
+                dataCollectors: this.agents.dataCollectors.length,
+                analysts: this.agents.analysts.length,
+                deliberation: this.agents.deliberation.length,
+                execution: this.agents.execution.length
+            },
+            registeredAgents: this.coordinator.getRegisteredAgents().length
+        };
+    }
+}
+//# sourceMappingURL=SwarmOrchestrator.js.map

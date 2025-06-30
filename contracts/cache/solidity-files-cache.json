@@ -1,0 +1,1283 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/contracts/chainlink/SwarmCCIP.sol": {
+      "lastModificationDate": 1751240785433,
+      "contentHash": "70172b671efbd402527690b663b47bb4",
+      "sourceName": "contracts/chainlink/SwarmCCIP.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts-ccip/contracts/applications/CCIPReceiver.sol",
+        "@chainlink/contracts-ccip/contracts/interfaces/IRouterClient.sol",
+        "@chainlink/contracts-ccip/contracts/libraries/Client.sol",
+        "@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwner.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SwarmCCIP"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1751216504337,
+      "contentHash": "190613e556d509d9e9a0ea43dc5d891d",
+      "sourceName": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1751216504337,
+      "contentHash": "0d47b53e10b1985efbb396f937626279",
+      "sourceName": "@openzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts-ccip@1.6.0_ethers@6.14.4/node_modules/@chainlink/contracts-ccip/contracts/applications/CCIPReceiver.sol": {
+      "lastModificationDate": 1751217732332,
+      "contentHash": "1fc19c87195fce4fed2d8c801d61b32b",
+      "sourceName": "@chainlink/contracts-ccip/contracts/applications/CCIPReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IAny2EVMMessageReceiver.sol",
+        "../libraries/Client.sol",
+        "@chainlink/contracts/src/v0.8/vendor/openzeppelin-solidity/v5.0.2/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "CCIPReceiver"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts-ccip@1.6.0_ethers@6.14.4/node_modules/@chainlink/contracts-ccip/contracts/interfaces/IRouterClient.sol": {
+      "lastModificationDate": 1751217732367,
+      "contentHash": "b94dd67dd4826e31b9790f51eadc9538",
+      "sourceName": "@chainlink/contracts-ccip/contracts/interfaces/IRouterClient.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Client.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "IRouterClient"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1751216504330,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts-ccip@1.6.0_ethers@6.14.4/node_modules/@chainlink/contracts-ccip/contracts/libraries/Client.sol": {
+      "lastModificationDate": 1751217732335,
+      "contentHash": "75e473054ca1fbbd4328649527b5b9cd",
+      "sourceName": "@chainlink/contracts-ccip/contracts/libraries/Client.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Client"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwner.sol": {
+      "lastModificationDate": 1751217732499,
+      "contentHash": "1ed782c1e3014a255f9171aefc3cdde3",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwner.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ConfirmedOwnerWithProposal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ConfirmedOwner"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1751216504311,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts-ccip@1.6.0_ethers@6.14.4/node_modules/@chainlink/contracts-ccip/contracts/interfaces/IAny2EVMMessageReceiver.sol": {
+      "lastModificationDate": 1751217732347,
+      "contentHash": "df78147389a510320e8264cd174a928d",
+      "sourceName": "@chainlink/contracts-ccip/contracts/interfaces/IAny2EVMMessageReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Client.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAny2EVMMessageReceiver"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/vendor/openzeppelin-solidity/v5.0.2/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1751217732530,
+      "contentHash": "de0163561b417b800d01749cbbe2147e",
+      "sourceName": "@chainlink/contracts/src/v0.8/vendor/openzeppelin-solidity/v5.0.2/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol": {
+      "lastModificationDate": 1751217732499,
+      "contentHash": "f29daa205dcbdc6037de8e38e5a34158",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IOwnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ConfirmedOwnerWithProposal"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/shared/interfaces/IOwnable.sol": {
+      "lastModificationDate": 1751217732534,
+      "contentHash": "b3ae9b7345205a0a65f3e0f89c176d88",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/IOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IOwnable"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/contracts/chainlink/SwarmFunctions.sol": {
+      "lastModificationDate": 1751240784544,
+      "contentHash": "d23318cacd2dd44b12552e79906bf5a3",
+      "sourceName": "contracts/chainlink/SwarmFunctions.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.8/functions/v1_0_0/FunctionsClient.sol",
+        "@chainlink/contracts/src/v0.8/functions/v1_0_0/libraries/FunctionsRequest.sol",
+        "@chainlink/contracts/src/v0.8/shared/access/ConfirmedOwner.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SwarmFunctions"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/functions/v1_0_0/FunctionsClient.sol": {
+      "lastModificationDate": 1751217732519,
+      "contentHash": "03c4620e369a0fa92a95a17988313bdb",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/v1_0_0/FunctionsClient.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IFunctionsRouter.sol",
+        "./interfaces/IFunctionsClient.sol",
+        "./libraries/FunctionsRequest.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsClient"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/functions/v1_0_0/libraries/FunctionsRequest.sol": {
+      "lastModificationDate": 1751217732521,
+      "contentHash": "8ca65d4666bcf1f4e3b01ac976f96dce",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/v1_0_0/libraries/FunctionsRequest.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../vendor/solidity-cborutils/v2.0.0/CBOR.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsRequest"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/functions/v1_0_0/interfaces/IFunctionsRouter.sol": {
+      "lastModificationDate": 1751217732532,
+      "contentHash": "e02e28dbe30aacda992e51136ceccf1b",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/v1_0_0/interfaces/IFunctionsRouter.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/FunctionsResponse.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFunctionsRouter"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/functions/v1_0_0/interfaces/IFunctionsClient.sol": {
+      "lastModificationDate": 1751217732532,
+      "contentHash": "2a200f8d13068f38d2e43aba82a42762",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/v1_0_0/interfaces/IFunctionsClient.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFunctionsClient"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/vendor/solidity-cborutils/v2.0.0/CBOR.sol": {
+      "lastModificationDate": 1751217732495,
+      "contentHash": "a496b670d630b3529a54986cd1148896",
+      "sourceName": "@chainlink/contracts/src/v0.8/vendor/solidity-cborutils/v2.0.0/CBOR.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../@ensdomains/buffer/v0.1.0/Buffer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "CBOR"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/vendor/@ensdomains/buffer/v0.1.0/Buffer.sol": {
+      "lastModificationDate": 1751217732487,
+      "contentHash": "f56822d17e35b3259cbdb1318c866e20",
+      "sourceName": "@chainlink/contracts/src/v0.8/vendor/@ensdomains/buffer/v0.1.0/Buffer.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "Buffer"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/functions/v1_0_0/libraries/FunctionsResponse.sol": {
+      "lastModificationDate": 1751217732522,
+      "contentHash": "70264441a9fdb243ed16851adfd67b11",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/v1_0_0/libraries/FunctionsResponse.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsResponse"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/contracts/core/PredictionMarket.sol": {
+      "lastModificationDate": 1751240783583,
+      "contentHash": "23e56a63e7a3f5adc24eaf2fd5840406",
+      "sourceName": "contracts/core/PredictionMarket.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/utils/Pausable.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@chainlink/contracts/src/v0.8/automation/AutomationCompatible.sol",
+        "@chainlink/contracts/src/v0.8/vrf/interfaces/VRFCoordinatorV2Interface.sol",
+        "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "PredictionMarket"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1751216504336,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol": {
+      "lastModificationDate": 1751217732566,
+      "contentHash": "06f8ab6bd949cea1abd42940d7965d65",
+      "sourceName": "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "VRFConsumerBaseV2"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1751216504338,
+      "contentHash": "1fb9edee1d763745a62d0b1954998792",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../../../interfaces/IERC1363.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/automation/AutomationCompatible.sol": {
+      "lastModificationDate": 1751217732474,
+      "contentHash": "5e080eff2df83e7d1ec3b981fddeb1ce",
+      "sourceName": "@chainlink/contracts/src/v0.8/automation/AutomationCompatible.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AutomationBase.sol",
+        "./interfaces/AutomationCompatibleInterface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AutomationCompatible"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/vrf/interfaces/VRFCoordinatorV2Interface.sol": {
+      "lastModificationDate": 1751217732567,
+      "contentHash": "c4963e3862ffee2974cc634689745531",
+      "sourceName": "@chainlink/contracts/src/v0.8/vrf/interfaces/VRFCoordinatorV2Interface.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "VRFCoordinatorV2Interface"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/interfaces/IERC1363.sol": {
+      "lastModificationDate": 1751216504329,
+      "contentHash": "6b7c5ee7a59c981072a804c99ab0fac9",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC1363.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1363"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1751216504330,
+      "contentHash": "79af12d64eacc7d77b9ee2ac4b4d51ee",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": []
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/interfaces/IERC165.sol": {
+      "lastModificationDate": 1751216504330,
+      "contentHash": "f808b485ee0cdc6768ee8385ae5f9a2a",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": []
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1751216504330,
+      "contentHash": "bf0119eb2a570f219729ff38b6cd1df8",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/automation/AutomationBase.sol": {
+      "lastModificationDate": 1751217732474,
+      "contentHash": "b53171d7e10f5036ecc73fac5d28028b",
+      "sourceName": "@chainlink/contracts/src/v0.8/automation/AutomationBase.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AutomationBase"
+      ]
+    },
+    "/home/atharva/work/code/hackathons/chromion/ccs/Swarm Oracle/contracts/node_modules/.pnpm/@chainlink+contracts@1.4.0_ethers@6.14.4/node_modules/@chainlink/contracts/src/v0.8/automation/interfaces/AutomationCompatibleInterface.sol": {
+      "lastModificationDate": 1751217732474,
+      "contentHash": "5cb8d69e4e9ed7ff601180e31372d0ca",
+      "sourceName": "@chainlink/contracts/src/v0.8/automation/interfaces/AutomationCompatibleInterface.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AutomationCompatibleInterface"
+      ]
+    }
+  }
+}
